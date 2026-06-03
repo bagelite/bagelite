@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parfums Homme | Bag Elite</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-category="homme">
+
+    <!-- Header -->
+    <header id="header" class="scrolled"> <!-- Force dark background on product pages -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logooooooooooo.png" alt="Bag Elite Logo">
+            </a>
+        </div>
+        
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#categories" class="active">Categories</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-icons">
+            <div class="cart-icon" onclick="window.location.href='checkout.html'">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Section -->
+    <section class="section" style="margin-top: 100px;">
+        <div class="section-title">
+            <h2>Collection Homme</h2>
+            <p>Découvrez nos fragrances masculines raffinées.</p>
+        </div>
+        
+        <div class="product-grid" id="product-grid">
+            <!-- Products -->
+            <div class="product-card">
+                <img src="images/homme/1 million.jpeg" alt="1 Million" class="product-img">
+                <h3 class="product-name">1 Million</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="1 Million" data-image="homme/1 million.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/212 men.jpeg" alt="212 Men" class="product-img">
+                <h3 class="product-name">212 Men</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="212 Men" data-image="homme/212 men.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/212 vip men.jpeg" alt="212 VIP Men" class="product-img">
+                <h3 class="product-name">212 VIP Men</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="212 VIP Men" data-image="homme/212 vip men.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/allure.jpeg" alt="Allure" class="product-img">
+                <h3 class="product-name">Allure</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Allure" data-image="homme/allure.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/armani code.jpeg" alt="Armani Code" class="product-img">
+                <h3 class="product-name">Armani Code</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Armani Code" data-image="homme/armani code.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/boss hugo.jpeg" alt="Boss Hugo" class="product-img">
+                <h3 class="product-name">Boss Hugo</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Boss Hugo" data-image="homme/boss hugo.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/boss.jpeg" alt="Boss" class="product-img">
+                <h3 class="product-name">Boss</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Boss" data-image="homme/boss.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/bvlgari.jpeg" alt="Bvlgari" class="product-img">
+                <h3 class="product-name">Bvlgari</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Bvlgari" data-image="homme/bvlgari.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/cartier.jpeg" alt="Cartier" class="product-img">
+                <h3 class="product-name">Cartier</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Cartier" data-image="homme/cartier.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/ck.jpeg" alt="CK" class="product-img">
+                <h3 class="product-name">CK</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="CK" data-image="homme/ck.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/fahrenheit.jpeg" alt="Fahrenheit" class="product-img">
+                <h3 class="product-name">Fahrenheit</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Fahrenheit" data-image="homme/fahrenheit.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/gio.jpeg" alt="Gio" class="product-img">
+                <h3 class="product-name">Gio</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Gio" data-image="homme/gio.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/invictus rabanne.jpeg" alt="Invictus Rabanne" class="product-img">
+                <h3 class="product-name">Invictus Rabanne</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Invictus Rabanne" data-image="homme/invictus rabanne.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/invictus.jpeg" alt="Invictus" class="product-img">
+                <h3 class="product-name">Invictus</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Invictus" data-image="homme/invictus.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/la nuit de l homme.jpeg" alt="La Nuit de l'Homme" class="product-img">
+                <h3 class="product-name">La Nuit de l'Homme</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="La Nuit de l'Homme" data-image="homme/la nuit de l homme.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/legend.jpeg" alt="Legend" class="product-img">
+                <h3 class="product-name">Legend</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Legend" data-image="homme/legend.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/million.jpeg" alt="Million" class="product-img">
+                <h3 class="product-name">Million</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Million" data-image="homme/million.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/sauvage.jpeg" alt="Sauvage" class="product-img">
+                <h3 class="product-name">Sauvage</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Sauvage" data-image="homme/sauvage.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/spice.jpeg" alt="Spice" class="product-img">
+                <h3 class="product-name">Spice</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Spice" data-image="homme/spice.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/tom ford ebene.jpeg" alt="Tom Ford Ebene" class="product-img">
+                <h3 class="product-name">Tom Ford Ebene</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Tom Ford Ebene" data-image="homme/tom ford ebene.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/tom ford tobacco.jpeg" alt="Tom Ford Tobacco" class="product-img">
+                <h3 class="product-name">Tom Ford Tobacco</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Tom Ford Tobacco" data-image="homme/tom ford tobacco.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/tom ford.jpeg" alt="Tom Ford" class="product-img">
+                <h3 class="product-name">Tom Ford</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Tom Ford" data-image="homme/tom ford.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/valentino uomo.jpeg" alt="Valentino Uomo" class="product-img">
+                <h3 class="product-name">Valentino Uomo</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Valentino Uomo" data-image="homme/valentino uomo.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/valentino.jpeg" alt="Valentino" class="product-img">
+                <h3 class="product-name">Valentino</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Valentino" data-image="homme/valentino.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/versace eros.jpeg" alt="Versace Eros" class="product-img">
+                <h3 class="product-name">Versace Eros</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Versace Eros" data-image="homme/versace eros.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/versace.jpeg" alt="Versace" class="product-img">
+                <h3 class="product-name">Versace</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Versace" data-image="homme/versace.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/homme/ysl.jpeg" alt="YSL" class="product-img">
+                <h3 class="product-name">YSL</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="YSL" data-image="homme/ysl.jpeg">Ajouter au panier</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tous droits réservés. Bag Elite Perfumes.</p>
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parfums Femme | Bag Elite</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-category="femme">
+
+    <!-- Header -->
+    <header id="header" class="scrolled">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logooooooooooo.png" alt="Bag Elite Logo">
+            </a>
+        </div>
+        
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#categories" class="active">Categories</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-icons">
+            <div class="cart-icon" onclick="window.location.href='checkout.html'">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Section -->
+    <section class="section" style="margin-top: 100px;">
+        <div class="section-title">
+            <h2>Collection Femme</h2>
+            <p>Découvrez nos fragrances féminines élégantes.</p>
+        </div>
+        
+        <div class="product-grid" id="product-grid">
+            <!-- Products -->
+            <div class="product-card">
+                <img src="images/femme/212 vip.jpeg" alt="212 VIP" class="product-img">
+                <h3 class="product-name">212 VIP</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="212 VIP" data-image="femme/212 vip.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/baccarat.jpeg" alt="Baccarat" class="product-img">
+                <h3 class="product-name">Baccarat</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Baccarat" data-image="femme/baccarat.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/because its you.jpeg" alt="Because It's You" class="product-img">
+                <h3 class="product-name">Because It's You</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Because It's You" data-image="femme/because its you.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/black opium.jpeg" alt="Black Opium" class="product-img">
+                <h3 class="product-name">Black Opium</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Black Opium" data-image="femme/black opium.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/burberry.jpeg" alt="Burberry" class="product-img">
+                <h3 class="product-name">Burberry</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Burberry" data-image="femme/burberry.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/chance chanel.jpeg" alt="Chance Chanel" class="product-img">
+                <h3 class="product-name">Chance Chanel</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Chance Chanel" data-image="femme/chance chanel.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/chanel paris.jpeg" alt="Chanel Paris" class="product-img">
+                <h3 class="product-name">Chanel Paris</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Chanel Paris" data-image="femme/chanel paris.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/coco chanel femme.jpeg" alt="Coco Chanel Femme" class="product-img">
+                <h3 class="product-name">Coco Chanel Femme</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Coco Chanel Femme" data-image="femme/coco chanel femme.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/coco chanel.jpeg" alt="Coco Chanel" class="product-img">
+                <h3 class="product-name">Coco Chanel</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Coco Chanel" data-image="femme/coco chanel.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/coco.jpeg" alt="Coco" class="product-img">
+                <h3 class="product-name">Coco</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Coco" data-image="femme/coco.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/darcy.jpeg" alt="Darcy" class="product-img">
+                <h3 class="product-name">Darcy</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Darcy" data-image="femme/darcy.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/dolce gabbana.jpeg" alt="Dolce Gabbana" class="product-img">
+                <h3 class="product-name">Dolce Gabbana</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Dolce Gabbana" data-image="femme/dolce gabbana.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/dolce light.jpeg" alt="Dolce Light" class="product-img">
+                <h3 class="product-name">Dolce Light</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Dolce Light" data-image="femme/dolce light.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/dolce love.jpeg" alt="Dolce Love" class="product-img">
+                <h3 class="product-name">Dolce Love</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Dolce Love" data-image="femme/dolce love.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/dolce.jpeg" alt="Dolce" class="product-img">
+                <h3 class="product-name">Dolce</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Dolce" data-image="femme/dolce.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/elie.jpeg" alt="Elie" class="product-img">
+                <h3 class="product-name">Elie</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Elie" data-image="femme/elie.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/good girl.jpeg" alt="Good Girl" class="product-img">
+                <h3 class="product-name">Good Girl</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Good Girl" data-image="femme/good girl.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/gucci flora.jpeg" alt="Gucci Flora" class="product-img">
+                <h3 class="product-name">Gucci Flora</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Gucci Flora" data-image="femme/gucci flora.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/gucci hora.jpeg" alt="Gucci Hora" class="product-img">
+                <h3 class="product-name">Gucci Hora</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Gucci Hora" data-image="femme/gucci hora.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/gucci.jpeg" alt="Gucci" class="product-img">
+                <h3 class="product-name">Gucci</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Gucci" data-image="femme/gucci.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/guerlan.jpeg" alt="Guerlain" class="product-img">
+                <h3 class="product-name">Guerlain</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Guerlain" data-image="femme/guerlan.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/joy.jpeg" alt="Joy" class="product-img">
+                <h3 class="product-name">Joy</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Joy" data-image="femme/joy.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/kayali eden.jpeg" alt="Kayali Eden" class="product-img">
+                <h3 class="product-name">Kayali Eden</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Kayali Eden" data-image="femme/kayali eden.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/la vie est belle.jpeg" alt="La Vie Est Belle" class="product-img">
+                <h3 class="product-name">La Vie Est Belle</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="La Vie Est Belle" data-image="femme/la vie est belle.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/moschino (2).jpeg" alt="Moschino (2)" class="product-img">
+                <h3 class="product-name">Moschino (2)</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Moschino (2)" data-image="femme/moschino (2).jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/moschino.jpeg" alt="Moschino" class="product-img">
+                <h3 class="product-name">Moschino</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Moschino" data-image="femme/moschino.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/olympea.jpeg" alt="Olympea" class="product-img">
+                <h3 class="product-name">Olympea</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Olympea" data-image="femme/olympea.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/poison.jpeg" alt="Poison" class="product-img">
+                <h3 class="product-name">Poison</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Poison" data-image="femme/poison.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/pure.jpeg" alt="Pure" class="product-img">
+                <h3 class="product-name">Pure</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Pure" data-image="femme/pure.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/si.jpeg" alt="Si" class="product-img">
+                <h3 class="product-name">Si</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Si" data-image="femme/si.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/tom ford fabulous.jpeg" alt="Tom Ford Fabulous" class="product-img">
+                <h3 class="product-name">Tom Ford Fabulous</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Tom Ford Fabulous" data-image="femme/tom ford fabulous.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/tom ford lost.jpeg" alt="Tom Ford Lost" class="product-img">
+                <h3 class="product-name">Tom Ford Lost</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Tom Ford Lost" data-image="femme/tom ford lost.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/tom ford soleil.jpeg" alt="Tom Ford Soleil" class="product-img">
+                <h3 class="product-name">Tom Ford Soleil</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Tom Ford Soleil" data-image="femme/tom ford soleil.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/tom ford velvet.jpeg" alt="Tom Ford Velvet" class="product-img">
+                <h3 class="product-name">Tom Ford Velvet</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Tom Ford Velvet" data-image="femme/tom ford velvet.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/tom ford white.jpeg" alt="Tom Ford White" class="product-img">
+                <h3 class="product-name">Tom Ford White</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Tom Ford White" data-image="femme/tom ford white.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/valentino born.jpeg" alt="Valentino Born" class="product-img">
+                <h3 class="product-name">Valentino Born</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Valentino Born" data-image="femme/valentino born.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/valentino donna.jpeg" alt="Valentino Donna" class="product-img">
+                <h3 class="product-name">Valentino Donna</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Valentino Donna" data-image="femme/valentino donna.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/versace crystal noir.jpeg" alt="Versace Crystal Noir" class="product-img">
+                <h3 class="product-name">Versace Crystal Noir</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Versace Crystal Noir" data-image="femme/versace crystal noir.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/versace crystal.jpeg" alt="Versace Crystal" class="product-img">
+                <h3 class="product-name">Versace Crystal</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Versace Crystal" data-image="femme/versace crystal.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/very sexy.jpeg" alt="Very Sexy" class="product-img">
+                <h3 class="product-name">Very Sexy</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Very Sexy" data-image="femme/very sexy.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/victoria secret.jpeg" alt="Victoria Secret" class="product-img">
+                <h3 class="product-name">Victoria Secret</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Victoria Secret" data-image="femme/victoria secret.jpeg">Ajouter au panier</button>
+            </div>
+            <div class="product-card">
+                <img src="images/femme/victoria tease.jpeg" alt="Victoria Tease" class="product-img">
+                <h3 class="product-name">Victoria Tease</h3>
+                <p class="product-price">180 DH</p>
+                <button class="btn-add-cart" onclick="addToCartManual(this)" data-name="Victoria Tease" data-image="femme/victoria tease.jpeg">Ajouter au panier</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tous droits réservés. Bag Elite Perfumes.</p>
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

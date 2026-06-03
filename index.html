@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bag Elite | Parfums de Luxe</title>
+    <meta name="description" content="Découvrez l'univers du parfum de luxe chez Bag Elite. Des fragrances uniques pour hommes et femmes.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="main-body" class="intro-active">
+
+    <!-- Premium Luxury Intro Overlay -->
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="intro-scene">
+            <div class="golden-glow"></div>
+            <div class="door-container">
+                <div class="door left-door">
+                    <div class="door-panel"></div>
+                    <div class="door-handle"></div>
+                </div>
+                <div class="door right-door">
+                    <div class="door-panel"></div>
+                    <div class="door-handle"></div>
+                </div>
+            </div>
+            <div class="intro-particles"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logooooooooooo.png" alt="Bag Elite Logo">
+            </a>
+        </div>
+        
+        <nav id="nav">
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg" id="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div id="particles-container"></div> <!-- Added particles container -->
+        <div class="hero-content">
+            <h1>Découvrez l'univers du parfum de luxe</h1>
+            <p>Des fragrances uniques pour hommes et femmes.</p>
+            <button class="btn-premium" onclick="document.getElementById('categories').scrollIntoView({behavior: 'smooth'})">SHOP NOW</button>
+        </div>
+    </section>
+
+    <!-- Floating Social Buttons -->
+    <div class="social-float" id="social-float" aria-label="Réseaux sociaux">
+        <a href="https://www.facebook.com/share/1AuSRNoCqq/" class="social-float-btn social-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+            <span class="social-float-tooltip">Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/bageliteparfums?igsh=cHVobzBnajFoZmwx" class="social-float-btn social-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+            <span class="social-float-tooltip">Instagram</span>
+        </a>
+        <a href="https://wa.me/212617981752" class="social-float-btn social-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="social-float-tooltip">Contactez-nous sur WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Categories Section -->
+    <section class="section" id="categories">
+        <div class="section-title">
+            <h2>Nos Catégories</h2>
+        </div>
+        <div class="category-grid">
+            <!-- Homme Card -->
+            <div class="category-card" onclick="window.location.href='homme.html'">
+                <img src="images/parfum homme.png" alt="Parfum Homme" class="category-img">
+                <div class="category-overlay">
+                    <h3>Parfum Homme</h3>
+                    <a href="homme.html" class="btn-discover">Découvrir</a>
+                </div>
+            </div>
+            <!-- Femme Card -->
+            <div class="category-card" onclick="window.location.href='femme.html'">
+                <img src="images/parfum femme.png" alt="Parfum Femme" class="category-img">
+                <div class="category-overlay">
+                    <h3>Parfum Femme</h3>
+                    <a href="femme.html" class="btn-discover">Découvrir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="about-content" style="text-align: center; width: 100%;">
+            <div class="section-title">
+                <h2>À Propos de Nous</h2>
+            </div>
+            <p>Bienvenue dans notre boutique spécialisée dans les parfums de qualité.</p>
+            <p>Nous sélectionnons avec soin des fragrances raffinées pour hommes et femmes afin de vous offrir une expérience unique. Notre mission est de proposer des parfums élégants, durables et accessibles, accompagnés d'un service client professionnel et d'une livraison rapide partout au Maroc.</p>
+            <p>Découvrez notre collection et trouvez le parfum qui correspond parfaitement à votre personnalité.</p>
+            
+            <div class="about-features">
+                <div class="feature-card">
+                    <i class="fas fa-gem"></i>
+                    <h4>Qualité Premium</h4>
+                    <p>Fragrances authentiques</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-truck"></i>
+                    <h4>Livraison Rapide</h4>
+                    <p>Partout au Maroc</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h4>Support 24/7</h4>
+                    <p>Service client pro</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logooooooooooo.png" alt="Bag Elite Logo">
+                <p>L'excellence de la parfumerie de luxe à votre portée.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#categories">Catégories</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="homme.html">Parfum Homme</a></li>
+                    <li><a href="femme.html">Parfum Femme</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="https://wa.me/212620069150">WhatsApp</a></li>
+                    <li><p>+212 620 069 150</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tous droits réservés. Bag Elite Perfumes.</p>
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
