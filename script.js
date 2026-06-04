@@ -14,10 +14,9 @@ let cart = JSON.parse(localStorage.getItem('bag_elite_cart')) || [];
 document.addEventListener('DOMContentLoaded', () => {
     handleIntroAnimation();
     initNavigation();
-    updateCartCount();
+    initProductPages();
     initParticles();
     
-    // Initialize Checkout if on checkout.html
     if (document.getElementById('checkout-page')) {
         renderOrderSummary();
     }
@@ -148,6 +147,56 @@ function initParticles() {
     }
 }
 
+// Product pages (homme / femme)
+function initProductPages() {
+    if (!document.getElementById('product-grid')) return;
+    createViewCartBar();
+    updateViewCartBar();
+}
+
+function createViewCartBar() {
+    if (document.getElementById('view-cart-bar')) return;
+
+    const bar = document.createElement('div');
+    bar.id = 'view-cart-bar';
+    bar.className = 'view-cart-bar';
+    bar.innerHTML = `
+        <span class="view-cart-bar-text"></span>
+        <a href="checkout.html" class="btn-view-cart-bar">Voir le panier</a>
+    `;
+    document.body.appendChild(bar);
+}
+
+function updateViewCartBar() {
+    const bar = document.getElementById('view-cart-bar');
+    if (!bar) return;
+
+    const count = cart.length;
+    if (count === 0) {
+        bar.classList.remove('visible');
+        return;
+    }
+
+    const label = count === 1 ? '1 parfum sélectionné' : `${count} parfums sélectionnés`;
+    bar.querySelector('.view-cart-bar-text').textContent = label;
+    bar.classList.add('visible');
+}
+
+function showViewCartOnCard(btn) {
+    const card = btn.closest('.product-card');
+    if (!card) return;
+
+    let link = card.querySelector('.btn-view-cart');
+    if (!link) {
+        link = document.createElement('a');
+        link.href = 'checkout.html';
+        link.className = 'btn-view-cart';
+        link.textContent = 'Voir le panier';
+        btn.insertAdjacentElement('afterend', link);
+    }
+    link.classList.add('visible');
+}
+
 // Cart Logic
 function addToCartManual(btn) {
     if (cart.length >= 3) {
@@ -158,36 +207,19 @@ function addToCartManual(btn) {
     const name = btn.dataset.name;
     const image = btn.dataset.image;
 
-    // Add as individual item to allow mixing different perfumes
-    cart.push({ 
-        name: name, 
-        image: image, 
-        cartId: Date.now() + Math.random() 
+    cart.push({
+        name: name,
+        image: image,
+        cartId: Date.now() + Math.random()
     });
 
     saveCart();
-    updateCartCount();
-    
-    // Luxury notification
-    const originalText = btn.innerText;
-    btn.innerText = "Ajouté !";
-    btn.style.background = "#c5a059";
-    setTimeout(() => {
-        btn.innerText = originalText;
-        btn.style.background = "";
-    }, 1500);
+    showViewCartOnCard(btn);
+    updateViewCartBar();
 }
 
 function saveCart() {
     localStorage.setItem('bag_elite_cart', JSON.stringify(cart));
-}
-
-function updateCartCount() {
-    const count = cart.length;
-    const cartCountElement = document.getElementById('cart-count');
-    if (cartCountElement) {
-        cartCountElement.innerText = count;
-    }
 }
 
 // Pricing Calculation
@@ -231,7 +263,7 @@ function renderOrderSummary() {
 function removeFromCart(index) {
     cart.splice(index, 1);
     saveCart();
-    updateCartCount();
+    updateViewCartBar();
     renderOrderSummary();
 }
 

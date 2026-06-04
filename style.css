@@ -760,6 +760,81 @@ body.intro-active {
     background: var(--accent-color);
 }
 
+.btn-view-cart {
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+
+.btn-view-cart.visible {
+    display: block;
+}
+
+.btn-view-cart:hover {
+    background: #b8924f;
+    color: var(--primary-color);
+}
+
+.view-cart-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 24px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.view-cart-bar.visible {
+    display: flex;
+}
+
+body[data-category="homme"],
+body[data-category="femme"] {
+    padding-bottom: 80px;
+}
+
+.view-cart-bar-text {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.btn-view-cart-bar {
+    padding: 12px 28px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.btn-view-cart-bar:hover {
+    background: #b8924f;
+}
+
 /* Checkout Page */
 .checkout-container {
     display: grid;
