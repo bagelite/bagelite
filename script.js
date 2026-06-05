@@ -14,6 +14,7 @@ let cart = JSON.parse(localStorage.getItem('bag_elite_cart')) || [];
 document.addEventListener('DOMContentLoaded', () => {
     handleIntroAnimation();
     initNavigation();
+    initAnnouncementBar();
     initProductPages();
     initParticles();
     
@@ -21,6 +22,38 @@ document.addEventListener('DOMContentLoaded', () => {
         renderOrderSummary();
     }
 });
+
+// Scrolling announcement bar (Collection pages)
+function initAnnouncementBar() {
+    const track = document.querySelector('.announcement-track');
+    if (!track) return;
+
+    let position = 0;
+    let segmentWidth = 0;
+
+    const measure = () => {
+        const segment = track.querySelector('.announcement-content');
+        segmentWidth = segment ? segment.offsetWidth : 0;
+    };
+
+    measure();
+    window.addEventListener('resize', measure);
+
+    track.style.animation = 'none';
+
+    const speed = window.innerWidth <= 768 ? 0.9 : 0.6;
+
+    const tick = () => {
+        position -= speed;
+        if (segmentWidth > 0 && Math.abs(position) >= segmentWidth) {
+            position += segmentWidth;
+        }
+        track.style.transform = `translate3d(${position}px, 0, 0)`;
+        requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+}
 
 // Premium Intro Logic
 function handleIntroAnimation() {

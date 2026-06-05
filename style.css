@@ -113,6 +113,58 @@ nav ul li a:hover {
     color: var(--accent-color);
 }
 
+/* Announcement Bar (Collection pages) */
+.announcement-bar {
+    position: fixed;
+    top: 101px;
+    left: 0;
+    width: 100%;
+    height: 26px;
+    background: #000;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.announcement-track {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    align-items: center;
+    flex-shrink: 0;
+    will-change: transform;
+    animation: announcement-scroll 14s linear infinite;
+}
+
+.announcement-content {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.announcement-content span {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 0 40px;
+}
+
+@keyframes announcement-scroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+.collection-section {
+    margin-top: 127px;
+}
+
 .cart-icon {
     position: relative;
     color: var(--secondary-color);
@@ -1066,6 +1118,25 @@ footer {
         padding: 10px 15px;
         background: rgba(0,0,0,0.95);
         height: 70px;
+    }
+
+    .announcement-bar {
+        top: 70px;
+        height: 24px;
+    }
+
+    .announcement-content span {
+        font-size: 10px;
+        letter-spacing: 2px;
+        padding: 0 25px;
+    }
+
+    .announcement-track {
+        animation-duration: 10s;
+    }
+
+    .collection-section {
+        margin-top: 94px;
     }
     
     .header-icons {
