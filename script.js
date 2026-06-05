@@ -1,14 +1,10 @@
 // Luxury Perfume E-commerce - Script
 
-// Pricing Rules
-const pricing = {
-    1: 180,
-    2: 320,
-    3: 420
-};
+const PRODUCT_PRICE = 180;
+const DELIVERY_PRICE = 20;
 
 // State Management
-let cart = JSON.parse(localStorage.getItem('bag_elite_cart')) || [];
+let selectedProduct = JSON.parse(localStorage.getItem('bag_elite_order')) || null;
 
 // Initialize Page
 document.addEventListener('DOMContentLoaded', () => {
@@ -183,121 +179,67 @@ function initParticles() {
 // Product pages (homme / femme)
 function initProductPages() {
     if (!document.getElementById('product-grid')) return;
-    createViewCartBar();
-    updateViewCartBar();
 }
 
-function createViewCartBar() {
-    if (document.getElementById('view-cart-bar')) return;
-
-    const bar = document.createElement('div');
-    bar.id = 'view-cart-bar';
-    bar.className = 'view-cart-bar';
-    bar.innerHTML = `
-        <span class="view-cart-bar-text"></span>
-        <a href="checkout.html" class="btn-view-cart-bar">Voir le panier</a>
-    `;
-    document.body.appendChild(bar);
-}
-
-function updateViewCartBar() {
-    const bar = document.getElementById('view-cart-bar');
-    if (!bar) return;
-
-    const count = cart.length;
-    if (count === 0) {
-        bar.classList.remove('visible');
-        return;
-    }
-
-    const label = count === 1 ? '1 parfum sélectionné' : `${count} parfums sélectionnés`;
-    bar.querySelector('.view-cart-bar-text').textContent = label;
-    bar.classList.add('visible');
-}
-
-function showViewCartOnCard(btn) {
-    const card = btn.closest('.product-card');
-    if (!card) return;
-
-    let link = card.querySelector('.btn-view-cart');
-    if (!link) {
-        link = document.createElement('a');
-        link.href = 'checkout.html';
-        link.className = 'btn-view-cart';
-        link.textContent = 'Voir le panier';
-        btn.insertAdjacentElement('afterend', link);
-    }
-    link.classList.add('visible');
-}
-
-// Cart Logic
+// Direct buy — one perfume per order
 function addToCartManual(btn) {
-    if (cart.length >= 3) {
-        alert("Vous pouvez choisir au maximum 3 parfums pour bénéficier de nos offres.");
-        return;
-    }
+    selectedProduct = {
+        name: btn.dataset.name,
+        image: btn.dataset.image,
+        price: PRODUCT_PRICE
+    };
 
-    const name = btn.dataset.name;
-    const image = btn.dataset.image;
-
-    cart.push({
-        name: name,
-        image: image,
-        cartId: Date.now() + Math.random()
-    });
-
-    saveCart();
-    showViewCartOnCard(btn);
-    updateViewCartBar();
+    saveOrder();
+    window.location.href = 'checkout.html';
 }
 
-function saveCart() {
-    localStorage.setItem('bag_elite_cart', JSON.stringify(cart));
-}
-
-// Pricing Calculation
-function calculateTotal(items) {
-    const totalItems = items.length;
-    
-    if (totalItems === 1) return pricing[1];
-    if (totalItems === 2) return pricing[2];
-    if (totalItems === 3) return pricing[3];
-    
-    return 0;
+function saveOrder() {
+    localStorage.setItem('bag_elite_order', JSON.stringify(selectedProduct));
 }
 
 // Checkout Logic
 function renderOrderSummary() {
+    const preview = document.getElementById('checkout-product-preview');
     const summaryList = document.getElementById('summary-list');
     const totalProduits = document.getElementById('total-produits');
     const totalGeneral = document.getElementById('total-general');
 
     if (!summaryList) return;
 
-    if (cart.length === 0) {
-        summaryList.innerHTML = '<p style="color: #999;">Votre panier est vide.</p>';
+    if (!selectedProduct) {
+        if (preview) {
+            preview.innerHTML = `
+                <p class="checkout-empty">Aucun parfum sélectionné.</p>
+                <a href="index.html#categories" class="btn-back-shop">Retour aux collections</a>
+            `;
+        }
+        summaryList.innerHTML = '<p style="color: #999;">Aucun parfum sélectionné.</p>';
         totalProduits.innerText = '0 DH';
-        totalGeneral.innerText = '20 DH';
+        totalGeneral.innerText = `${DELIVERY_PRICE} DH`;
         return;
     }
 
-    summaryList.innerHTML = cart.map((item, index) => `
+    if (preview) {
+        preview.innerHTML = `
+            <div class="checkout-product-card">
+                <img src="${selectedProduct.image}" alt="${selectedProduct.name}" class="checkout-product-img">
+                <div class="checkout-product-info">
+                    <h3>${selectedProduct.name}</h3>
+                    <p class="checkout-product-price">${selectedProduct.price} DH</p>
+                </div>
+            </div>
+        `;
+    }
+
+    summaryList.innerHTML = `
         <div class="summary-item">
-            <span>${item.name}</span>
-            <button onclick="removeFromCart(${index})" style="background: none; border: none; color: #ff4444; cursor: pointer; font-size: 12px;">Supprimer</button>
+            <span>${selectedProduct.name}</span>
+            <span>${selectedProduct.price} DH</span>
         </div>
-    `).join('');
+    `;
 
-    const subtotal = calculateTotal(cart);
-    totalProduits.innerText = `${subtotal} DH`;
-    totalGeneral.innerText = `${subtotal + 20} DH`;
-}
-
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    saveCart();
-    updateViewCartBar();
-    renderOrderSummary();
+    totalProduits.innerText = `${selectedProduct.price} DH`;
+    totalGeneral.innerText = `${selectedProduct.price + DELIVERY_PRICE} DH`;
 }
 
 // WhatsApp Order Confirmation
@@ -313,28 +255,17 @@ function confirmOrder() {
         return;
     }
 
-    if (cart.length === 0) {
-        alert("Votre panier est vide.");
+    if (!selectedProduct) {
+        alert("Aucun parfum sélectionné.");
         return;
     }
 
-    const subtotal = calculateTotal(cart);
-    const total = subtotal + 20;
+    const total = selectedProduct.price + DELIVERY_PRICE;
 
     let message = `Bonjour,\n\nJe souhaite commander :\n\n`;
-    
-    // Group items for clear reading but show they are separate
-    const counts = {};
-    cart.forEach(item => {
-        counts[item.name] = (counts[item.name] || 0) + 1;
-    });
-    
-    for (const name in counts) {
-        message += `- ${name} (x${counts[name]})\n`;
-    }
-
-    message += `\nTotal produits (${cart.length} parfums) : ${subtotal} DH`;
-    message += `\nLivraison : 20 DH`;
+    message += `- ${selectedProduct.name}\n`;
+    message += `\nPrix parfum : ${selectedProduct.price} DH`;
+    message += `\nLivraison : ${DELIVERY_PRICE} DH`;
     message += `\nTotal général : ${total} DH`;
     message += `\n\nInformations client :\n`;
     message += `Nom : ${nom}\n`;
@@ -346,9 +277,9 @@ function confirmOrder() {
 
     const whatsappUrl = `https://wa.me/212617981752?text=${encodeURIComponent(message)}`;
     
-    // Clear cart after order
-    cart = [];
-    saveCart();
+    // Clear order after confirmation
+    selectedProduct = null;
+    localStorage.removeItem('bag_elite_order');
     
     window.open(whatsappUrl, '_blank');
 }
