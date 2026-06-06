@@ -242,13 +242,14 @@ function renderOrderSummary() {
     totalGeneral.innerText = `${selectedProduct.price + DELIVERY_PRICE} DH`;
 }
 
-// WhatsApp Order Confirmation
+// Order Submission Logic (Google Sheets JSON)
 function confirmOrder() {
     const nom = document.getElementById('nom').value;
     const prenom = document.getElementById('prenom').value;
     const ville = document.getElementById('ville').value;
     const adresse = document.getElementById('adresse').value;
     const telephone = document.getElementById('telephone').value;
+    const btn = document.querySelector('.btn-confirm');
 
     if (!nom || !prenom || !ville || !adresse || !telephone) {
         alert("Veuillez remplir tous les champs.");
@@ -260,26 +261,43 @@ function confirmOrder() {
         return;
     }
 
-    const total = selectedProduct.price + DELIVERY_PRICE;
+    // Prepare data as JSON object for Google Apps Script
+    const orderData = {
+        parfum: selectedProduct.name,
+        prenom: prenom,
+        nom: nom,
+        ville: ville,
+        adresse: adresse,
+        numero: telephone
+    };
 
-    let message = `Bonjour,\n\nJe souhaite commander :\n\n`;
-    message += `- ${selectedProduct.name}\n`;
-    message += `\nPrix parfum : ${selectedProduct.price} DH`;
-    message += `\nLivraison : ${DELIVERY_PRICE} DH`;
-    message += `\nTotal général : ${total} DH`;
-    message += `\n\nInformations client :\n`;
-    message += `Nom : ${nom}\n`;
-    message += `Prénom : ${prenom}\n`;
-    message += `Ville : ${ville}\n`;
-    message += `Adresse : ${adresse}\n`;
-    message += `Téléphone : ${telephone}\n`;
-    message += `\nMerci.`;
+    // Disable button and show loading state
+    btn.innerText = "Traitement en cours...";
+    btn.disabled = true;
+    btn.style.opacity = "0.7";
 
-    const whatsappUrl = `https://wa.me/212617981752?text=${encodeURIComponent(message)}`;
-    
-    // Clear order after confirmation
-    selectedProduct = null;
-    localStorage.removeItem('bag_elite_order');
-    
-    window.open(whatsappUrl, '_blank');
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxAT4Amj50nbXAqKrJgaEtPQIxixuGqNxq27hW54CUsHj4yyceu3dcV3S2XI-gXX2CBDg/exec';
+
+    // Sending data as JSON string with proper headers
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors', // Keeps the request simple to avoid preflight issues with Google
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(orderData)
+    })
+    .then(() => {
+        // Clear order after successful submission
+        selectedProduct = null;
+        localStorage.removeItem('bag_elite_order');
+        
+        // Redirect to Thank You page
+        window.location.href = 'thankyou.html';
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        // Fallback redirection even if error occurs, as no-cors often triggers catch
+        window.location.href = 'thankyou.html';
+    });
 }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci pour votre commande | Bag Elite</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '729606193231438');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" 
+           src="https://www.facebook.com/tr?id=729606193231438&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Purchase Event Tracking -->
+    <script> 
+    fbq('track', 'Purchase', { 
+      value: 199.00, 
+      currency: 'MAD' 
+    }); 
+    </script>
+</head>
+<body id="main-body">
+
+    <!-- Header -->
+    <header id="header" class="scrolled">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logooooooooooo.png" alt="Bag Elite Logo">
+            </a>
+        </div>
+        
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Success Message Section -->
+    <section class="section" style="margin-top: 150px; min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 20px;">
+        <div style="background: var(--bg-light); padding: 60px 40px; border-radius: 10px; max-width: 600px; width: 100%; box-shadow: var(--shadow);">
+            <i class="fas fa-check-circle" style="font-size: 80px; color: var(--accent-color); margin-bottom: 30px;"></i>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">Merci pour votre commande !</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #555; margin-bottom: 40px;">
+                Nous avons bien reçu votre commande.<br>
+                Notre équipe vous contactera dans les plus brefs délais.
+            </p>
+            <a href="index.html" class="btn-premium" style="display: inline-block; text-decoration: none;">Retour à l'accueil</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top: 50px;">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tous droits réservés. Bag Elite Perfumes.</p>
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
